@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  web_server:
+    image: kun391/phpup:1.0
+    volumes:
+      - ./app:/var/www/app
+    working_dir: /var/www/app/
+    ports:
+      - '${WEB_PORT}:80'
+    depends_on:
+      - database_server
+
+  database_server:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - '${DB_PORT}:3306'
+    volumes:
+      - ./dbvolume:/var/lib/mysql
