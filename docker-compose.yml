@@ -5,7 +5,7 @@ services:
   web_server:
     image: kun391/phpup:1.0
     volumes:
-      - ./app:/var/www/app
+      - ./src:/var/www/app
     working_dir: /var/www/app/
     ports:
       - '${WEB_PORT}:80'
