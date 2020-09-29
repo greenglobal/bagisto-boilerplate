@@ -13,7 +13,7 @@ Bagisto boilerplate using docker
 ### Create bagisto project (optional):
 
 - `docker exec -it <web_service> bash`
-- [In docker container] `composer create-project bagisto/bagisto ../app`
+- [In docker container] `composer create-project bagisto/bagisto ./`
 - Create `src/.env` file base on `src/.env.example` file
 - `sudo chown -R <your user> src`
 - `sudo chmod -R 777 src/public`
